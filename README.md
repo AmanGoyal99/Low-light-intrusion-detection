@@ -89,7 +89,7 @@ The mAP curve of our trained model can be found below :
 
 It's qualitative results are as followed:
 
-<img src = "/assets/weapon_detection_1.png" width = '450' height = '350' > <img src = "/assets/weapon_detection_2.png" width = '450' height = '350' >
+<img src = "/assets/weapon_detection_1.png" width = '400' height = '300' > <img src = "/assets/weapon_detection_2.png" width = '400' height = '300' >
 
 ## 3. Pose estimation
 
@@ -97,7 +97,7 @@ This step in our pipeline is quite crucial as pose information of any criminal c
 
 Initially, we tested out our pose estimation module on some youtube videos :
 
-<img src = "/assets/pose_estimation_1.gif" width = '450' height = '350' >  <img src = "/assets/pose_estimation_2.gif" width = '450' height = '350' >
+<img src = "/assets/pose_estimation_1.gif" width = '400' height = '300' >  <img src = "/assets/pose_estimation_2.gif" width = '400' height = '350' >
 
 Once, we were satisfied with the results, we finally applied it on our own video :
 
@@ -112,7 +112,7 @@ Once intruder, it's weapon and it's pose has been estimated, the next crucial ta
 In order to achieve this, we utilize the [Viola Jones algorithm](https://en.wikipedia.org/wiki/Viola%E2%80%93Jones_object_detection_framework). However, the default parameters did not work for us well and we had to finetune the parameters to get optimal performance for our use-case.
 After running some test images over our [face detection script](https://github.com/AmanGoyal99/Low-light-intrusion-detection/blob/main/Face-detection/face_detect_img.py), we were able to obtain the following results:
 
-<img src = "/assets/face_detection_1.jpg" width = '350' height = '350' >  <img src = "/assets/face_detection_2.jpg" width = '500' height = '350' >
+<img src = "/assets/face_detection_1.jpg" width = '350' height = '350' >  <img src = "/assets/face_detection_2.jpg" width = '400' height = '300' >
 
 The qualitative results obtained on our video are as follows:
 
