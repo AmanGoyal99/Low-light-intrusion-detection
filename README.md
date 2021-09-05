@@ -112,7 +112,7 @@ Once intruder, it's weapon and it's pose has been estimated, the next crucial ta
 In order to achieve this, we utilize the [Viola Jones algorithm](https://en.wikipedia.org/wiki/Viola%E2%80%93Jones_object_detection_framework). However, the default parameters did not work for us well and we had to finetune the parameters to get optimal performance for our use-case.
 After running some test images over our [face detection script](https://github.com/AmanGoyal99/Low-light-intrusion-detection/blob/main/Face-detection/face_detect_img.py), we were able to obtain the following results:
 
-<img src = "/assets/face_detection_1.jpg" width = '350' height = '350' >  <img src = "/assets/face_detection_2.jpg" width = '400' height = '300' >
+<img src = "/assets/face_detection_1.jpg" width = '300' height = '300' >  <img src = "/assets/face_detection_2.jpg" width = '400' height = '300' >
 
 The qualitative results obtained on our video are as follows:
 
