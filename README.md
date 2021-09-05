@@ -91,9 +91,57 @@ It's qualitative results are as followed:
 
 <img src = "/assets/weapon_detection_1.png" width = '450' height = '350' > <img src = "/assets/weapon_detection_2.png" width = '450' height = '350' >
 
-## Face detection
+## 3. Pose estimation
 
-Once intruder and it's weapon has been detected, the next crucial task is that of face detection as we would be requiring it to extract intruder's face and scan it in the database of existing wanted criminals and terrorists.
+This step in our pipeline is quite crucial as pose information of any criminal can play a major role in the vigilantes capturing the criminal. We utilized [HRNet](https://arxiv.org/abs/1902.09212) for achieving intruder pose estimation.
+
+Initially, we tested out our pose estimation module on some youtube videos :
+
+<img src = "/assets/pose_estimation_1.gif" width = '450' height = '350' >  <img src = "/assets/pose_estimation_2.gif" width = '450' height = '350' >
+
+Once, we were satisfied with the results, we finally applied it on our own video :
+
+<p align="center">
+<img src = "/assets/out_intruder_pose_estimation.gif">
+</p>
+
+## 4. Face detection
+
+Once intruder, it's weapon and it's pose has been estimated, the next crucial task is that of face detection as we would be requiring it to extract intruder's face and scan it in the database of existing wanted criminals and terrorists.
+
+In order to achieve this, we utilize the [Viola Jones algorithm](https://en.wikipedia.org/wiki/Viola%E2%80%93Jones_object_detection_framework). However, the default parameters did not work for us well and we had to finetune the parameters to get optimal performance for our use-case.
+After running some test images over our [face detection script](https://github.com/AmanGoyal99/Low-light-intrusion-detection/blob/main/Face-detection/face_detect_img.py), we were able to obtain the following results:
+
+<img src = "/assets/face_detection_1.jpg" width = '350' height = '350' >  <img src = "/assets/face_detection_2.jpg" width = '500' height = '350' >
+
+The qualitative results obtained on our video are as follows:
+
+<p align="center">
+<img src = "/assets/face_output.gif">
+</p>
+
+## 5. Final Output
+
+After all the above steps were achieved as mentioned in the pipeline as well, we were able to obtain the following result on our video :
+
+<p align="center">
+<img src = "/assets/final_output.gif">
+</p>
+
+## Next steps and Conclusion
+
+After having spent a decent amount of time on developing this solution, we have just gathered more and more awareness about the benefits of Deep Learning not just to the AI Community but in fact to the entire humanity by solving some of the most important problems of the mankind. 
+
+Like every other AI based system, our system has also few flaws which are listed below :
+
+- It has difficulty in detecting the weapon when it is quite close to the person and merges with his/her clothing. The model tends to be confused and this could be improved by gathering more such dataset.
+- Pose estimation of multiple intruders from a given image is an intensive task and was not achieved in this project. In case of multiple persons in a given frame, an additional network for object detection would be used and this just adds to the already computationally intensive system. Our system is meant to be used in real-time and hence alternatives would have to be looked at.
+
+
+We look to work and fix the above issues mentioned in the future to build a more robust solution which can hopefully be added as an extra layer of protection for military purposes and therefore curb terrorism.
+
+
+
 
 
 
