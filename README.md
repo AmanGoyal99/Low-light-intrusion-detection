@@ -25,8 +25,9 @@ The above illustration demonstrates all the various techniques being performed o
 
 Before moving on to the approaches, following is the architecture of our proposed system :
 
-![Level 2 DFD](https://user-images.githubusercontent.com/51092051/132125266-f227768b-e0bf-48f3-82b3-5d70f0696030.png)
-
+<p align="center">
+<img src = "https://user-images.githubusercontent.com/51092051/132125266-f227768b-e0bf-48f3-82b3-5d70f0696030.png" width = "700" height = "550">
+</p>
 
 ## Collecting low light videos
 
@@ -52,8 +53,47 @@ After processing input video over our [low light image processing script](https:
 
 It can be clearly noticed that the video has become much visible as compared to the low light input video.
 
-## 2. Intruder detection
+## 2. Intruder and Weapon detection
 
-Once we were able to process low light, next it was time to move on to 
+Once we were able to process low light, next it was time to move on to detecting the intruders and their weapons. 
+
+### Intruder detection
+
+In this case, we utilized the pre-trained YOLOv4-tiny weights for person detection and were able to achieve some great results. 
+Using our [intruder detection script](https://github.com/AmanGoyal99/Low-light-intrusion-detection/blob/main/Intruder-detection/intruder_detection.py), we were able to achieve results which are as follows:
+                                                
+<img src = "/assets/person_1.png" width = '450' height = '350' > <img src = "/assets/person_2.png" width = '450' height = '350' >
+
+Finally, this is how intruder detection perfrormed on our video :
+
+<p align="center">
+<img src = "/assets/out_intruder_detection.gif">
+</p>
+
+### Weapon detection
+
+For this part, we had to train our own model using the [YOLOv4 architecture](https://arxiv.org/abs/2004.10934). The dataset was collected from [here](https://dasci.es/transferencia/open-data/24705/). Coming back to the model, as per various useful suggestions mentioned in the [official implementation](https://github.com/AlexeyAB/darknet), we accordingly formulated a pipeline consisting of various necessary files as shown in our [weapon detection folder](https://github.com/AmanGoyal99/Low-light-intrusion-detection/tree/main/Weapon-detection).
+
+It's quantitative results are as follows:
+
+| Class | AP | TP | FP |
+| --- | --- | --- | --- |
+| Knife | 86.57% | 65 | 18 |
+| Handgun | 88.10% | 21 | 9 |
+
+The mAP curve of our trained model can be found below :
+
+<p align="center">
+<img src = "/assets/weapon_detection_mAP_curve.png" width = '400' height = '300'>
+</p>
+
+It's qualitative results are as followed:
+
+<img src = "/assets/weapon_detection_1.png" width = '450' height = '350' > <img src = "/assets/weapon_detection_2.png" width = '450' height = '350' >
+
+## Face detection
+
+Once intruder and it's weapon has been detected, the next crucial task is that of face detection as we would be requiring it to extract intruder's face and scan it in the database of existing wanted criminals and terrorists.
+
 
 
