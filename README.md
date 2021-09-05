@@ -62,7 +62,7 @@ Once we were able to process low light, next it was time to move on to detecting
 In this case, we utilized the pre-trained YOLOv4-tiny weights for person detection and were able to achieve some great results. 
 Using our [intruder detection script](https://github.com/AmanGoyal99/Low-light-intrusion-detection/blob/main/Intruder-detection/intruder_detection.py), we were able to achieve results which are as follows:
                                                 
-<img src = "/assets/person_1.png" width = '450' height = '350' > <img src = "/assets/person_2.png" width = '450' height = '350' >
+<img src = "/assets/person_1.png" width = '350' height = '250' > <img src = "/assets/person_2.png" width = '350' height = '250' >
 
 Finally, this is how intruder detection perfrormed on our video :
 
