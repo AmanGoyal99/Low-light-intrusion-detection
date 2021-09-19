@@ -1,0 +1,3 @@
+[submodule "Intruder_pose_estimation/simple-HRNet"]
+	path = Intruder_pose_estimation/simple-HRNet
+	url = https://github.com/stefanopini/simple-HRNet.git
