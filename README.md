@@ -1,4 +1,4 @@
-# Low-light-intrusion-detection
+# Low-light-Intrusion-Detection
 
 ## Introduction
 
